@@ -39,6 +39,15 @@ class weightedRNG {
         }
     }
 
+    getOneInXByName(name) {
+        const item = this.items.find(item => item.item === name);
+        if (item && item.weight > 0) {
+            const x = Math.round(100 / item.weight);
+            return `1 in ${x}`;
+        }
+        return null;
+    }
+
     getTable() {
         return this.items.map(({item, weight}) => `${item} (${weight})`).join(', ');
     }
@@ -63,6 +72,7 @@ button.addEventListener('click', () => {
     soundfx.play();
     const rollResult = rng.roll();
     const percent = rng.getPercentByName(rollResult);
-    resultElement.textContent = `${rollResult} (${percent}%)`;
+    const oneInX = rng.getOneInXByName(rollResult);
+    resultElement.textContent = `${rollResult} (${percent}%) [${oneInX}]`;
     resultElement.style.color = rng.getColorByName(rollResult);
 });
