@@ -65,7 +65,7 @@ rng.addItem('Stinky', 0.78125, 'black');
 
 const button = document.getElementById('gen')
 const resultElement = document.getElementById('result')
-const soundfx = new Audio('sounds/click.mp3');
+const soundfx = new Audio('../sounds/click.mp3');
 
 button.addEventListener('click', () => {
     soundfx.currentTime = 0;
