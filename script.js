@@ -23,7 +23,8 @@ class weightedRNG {
     getPercentByName(name) {
         const item = this.items.find(item => item.item === name);
         if (item) {
-            return item.weight;
+            // return item.weight;
+            return Math.round(item.weight * 100) / 100;
         } else {
             return null;
         }
@@ -49,7 +50,9 @@ rng.addItem('Common', 50, 'gray');
 rng.addItem('Uncommon', 25, 'green');
 rng.addItem('Rare', 12.5, 'blue');
 rng.addItem('Epic', 6.25, 'purple');  
-rng.addItem('Legendary', 6.25, 'orange');  
+rng.addItem('Legendary', 3.125, 'orange');  
+rng.addItem('Mythic', 1.5625, 'red');
+rng.addItem('Stinky', 0.78125, 'black');
 
 const button = document.getElementById('gen')
 const resultElement = document.getElementById('result')
