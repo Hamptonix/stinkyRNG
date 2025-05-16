@@ -1,0 +1,34 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    align-items: center;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    background: #444;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 8px;
+    color: #fff;
+}
+
+button:hover {
+    background: #666;
+}
+
+button:active {
+    background: #888;
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+#result {
+    font-size: 2rem;
+    margin-top: 20px;
+    padding: 20px;
+}
